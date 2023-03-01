@@ -19,7 +19,7 @@ class Database():
 
     def addGesture(self, userId, gesture, points):
         if gesture not in self.data[userId]:
-            print("gesture not in database and user")
+            # print("gesture not in database and user")
             self.data[userId][gesture] = []
         self.data[userId][gesture].append(points)
         self.dumpData()

@@ -138,13 +138,15 @@ class Board:
             self.db.addGesture(self.currentUser, self.gestureList[gestureIndex], deepcopy(self.points))
             self.points.clear()
             self.board.delete(BOARD_DELETE_MODE)
-        if self.userDrawCount < 160:
+        if self.userDrawCount < 5:
             self.setPromptLabel('Please draw a {}'.format(self.gestureList[self.gestureIndex]), 2)
             self.userDrawCount += 1
             self.gestureIndex = (self.gestureIndex + 1)%len(self.gestureList)
             self.readyToStore = True
         else:
+            self.setPromptLabel('Saving your contribution!', 1)
             self.setPromptLabel('Thank you for participating, {}!'.format(self.currentUser), 2)
+            self.root.update()
             self.createXMLUserLogs()
             self.userDrawCount = 0
             self.gestureIndex = 0
