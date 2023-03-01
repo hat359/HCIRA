@@ -6,6 +6,11 @@ from copy import deepcopy
 from recognizer import Recognizer
 from database import Database
 from random import shuffle
+from time import strftime
+import json
+import os
+from shutil import rmtree
+from xml.dom import minidom
 
 class Board:
     def __init__(self, root, mode):
@@ -20,7 +25,12 @@ class Board:
             self.startPointX = 0
             self.startPointY = 0
         elif self.mode == 'collection':
+            self.userAdded = False
+            self.readyToStore = False
             self.gestureList = GESTURE_LIST
+            self.currentUser = ''
+            self.userDrawCount = 0
+            self.gestureIndex = 0
             self.currentUserId = 'sampleUser'
             self.currentGesture = 'sampleGesture'
             self.points = []
@@ -31,15 +41,15 @@ class Board:
             # # To be added
             # 1. DB module to store user points with user id in a json - Done
             self.db = Database()
-            self.db.addUser('sampleUser')
             # 2. Show sample drawing on top right
             # 3. Add button to submit user input - Done
             self.createSubmitButton()
             # 4. Add label to show prompt to be drawn - Done
             self.createPromptLabel()
-            self.setPromptLabel('Prompt label sample text.')
+            self.setPromptLabel('Please enter userId',1)
             # 5. Add logic to show prompt and store points - Inprogress
             # 6. Add text box to get user ID and any other user data
+            self.createUserIdTextBox()
             # 7. Convert json(database.json) to xml
     
     # def collectFromUser(self, userId):
@@ -58,6 +68,7 @@ class Board:
 
     def createUserIdTextBox(self):
         self.userIdTextBox = Text(self.root, width=TEXT_BOX_WITDH, height=TEXT_BOX_HEIGHT)
+        self.userIdTextBox.pack()
 
     def createClearButton(self):
         self.clearButton = Button(self.root, text=CLEAR_BUTTON_TEXT)
@@ -89,11 +100,17 @@ class Board:
         self.confidenceLabel.configure(text="")
     
     def createPromptLabel(self):
-        self.promptLabel = Label(self.root)
-        self.promptLabel.pack()
+        self.promptLabel1 = Label(self.root)
+        self.promptLabel1.pack()
+
+        self.promptLabel2 = Label(self.root)
+        self.promptLabel2.pack()
     
-    def setPromptLabel(self,message):
-        self.promptLabel.configure(text=message)
+    def setPromptLabel(self,message, id):
+        if id == 1:
+            self.promptLabel1.configure(text=message)
+        else:
+            self.promptLabel2.configure(text=message)
 
     def setMouseBindings(self):
         # Creating bindings for board (draw handles mouse down and drag events)
@@ -110,10 +127,30 @@ class Board:
         print(LOG_BOARD_CLEARED)
     
     def onSubmitButtonClick(self):
-        print("Before:",self.db.getData())
-        self.db.addGesture(self.currentUserId, self.currentGesture, deepcopy(self.points))
-        print("After:", self.db.getData())
-        self.points.clear()
+        if not self.userAdded:
+            userId = self.userIdTextBox.get(1.0, "end-1c")
+            self.currentUser = userId
+            self.db.addUser(userId)
+            self.setPromptLabel('Welcome {}!'.format(userId), 1)
+            self.userAdded = True
+        if self.readyToStore:
+            gestureIndex = (self.gestureIndex - 1)%len(self.gestureList)
+            self.db.addGesture(self.currentUser, self.gestureList[gestureIndex], deepcopy(self.points))
+            self.points.clear()
+            self.board.delete(BOARD_DELETE_MODE)
+        if self.userDrawCount < 160:
+            self.setPromptLabel('Please draw a {}'.format(self.gestureList[self.gestureIndex]), 2)
+            self.userDrawCount += 1
+            self.gestureIndex = (self.gestureIndex + 1)%len(self.gestureList)
+            self.readyToStore = True
+        else:
+            self.setPromptLabel('Thank you for participating, {}!'.format(self.currentUser), 2)
+            self.createXMLUserLogs()
+            self.userDrawCount = 0
+            self.gestureIndex = 0
+            self.setPromptLabel('Please enter user ID and click Submit to Start!', 1)
+            self.userAdded = False
+            self.readyToStore = False
 
     def getLastCoordinates(self,event):
         self.startPointX,self.startPointY=event.x,event.y
@@ -153,3 +190,45 @@ class Board:
         recognizedGesture, score, time , _= self.recognizer.recognizeGesture(translatedPoints)
         self.setPredictionLabels(recognizedGesture, score, time)
         print(LOG_DRAWING_FINISHED)
+    
+    def createXMLUserLogs(self):
+        file = open('database.json')
+        user_data = json.load(file)
+        file.close()
+        
+        root = os.getcwd()
+        log_directory_name = 'xml_collected_logs'
+        log_directory_path = os.path.join(root, log_directory_name)
+        if os.path.isdir(log_directory_path):
+            rmtree(log_directory_path)
+        os.makedirs(log_directory_path)
+
+        for user in user_data:
+            # print(user)
+            user_path = os.path.join(log_directory_path, user)
+            os.makedirs(user_path)
+            for gesture in user_data[user]:
+                # print(gesture)
+                # print(len(user_data[user][gesture]))
+                for i in range(0,len(user_data[user][gesture])):
+                    pointList = user_data[user][gesture][i]
+                    # print(user, gesture, len(pointList))
+                    root = minidom.Document()
+                    gestureChild = root.createElement('Gesture')
+                    gestureChild.setAttribute('User', str(user))
+                    gestureChild.setAttribute('Gesture', '{}{}'.format(gesture,i+1))
+                    gestureChild.setAttribute('Number', str(i+1))
+                    gestureChild.setAttribute('NumPts', str(len(pointList)))
+                    gestureChild.setAttribute('Date', strftime("%d-%m-%Y"))
+                    gestureChild.setAttribute('Time', strftime("%H:%M:%S"))
+                    root.appendChild(gestureChild)
+                    for point in pointList:
+                        pointChild = root.createElement('Point')
+                        pointChild.setAttribute('X', str(point[0]))
+                        pointChild.setAttribute('Y', str(point[1]))
+                        gestureChild.appendChild(pointChild)
+                        gestureRootString = root.toprettyxml(indent= "\t")
+                        file_name = '{}{}.xml'.format(gesture,i+1)
+                        file_path = os.path.join(user_path, file_name)
+                        with open(file_path, "w") as file:
+                            file.write(gestureRootString) 

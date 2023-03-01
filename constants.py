@@ -4,8 +4,8 @@
 
 BOARD_WIDTH = 1000 # width and height of the canvas
 BOARD_HEIGHT = 600
-TEXT_BOX_WITDH = 100
-TEXT_BOX_HEIGHT = 50
+TEXT_BOX_WITDH = 10
+TEXT_BOX_HEIGHT = 1
 BOARD_BG = 'white' # background color of the canvas.  
 MOUSE_DRAG_MODE = '<B1-Motion>' # defines the action of the mouse
 MOUSE_UP_MODE = '<ButtonRelease-1>'
