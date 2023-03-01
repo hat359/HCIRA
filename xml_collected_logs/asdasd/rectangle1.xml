@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Gesture User="asdasd" Gesture="rectangle1" Number="1" NumPts="17" Date="01-03-2023" Time="11:00:50">
+	<Point X="180" Y="412"/>
+	<Point X="180" Y="422"/>
+	<Point X="182" Y="431"/>
+	<Point X="184" Y="439"/>
+	<Point X="186" Y="448"/>
+	<Point X="188" Y="456"/>
+	<Point X="191" Y="463"/>
+	<Point X="193" Y="471"/>
+	<Point X="195" Y="480"/>
+	<Point X="197" Y="489"/>
+	<Point X="200" Y="498"/>
+	<Point X="202" Y="507"/>
+	<Point X="203" Y="515"/>
+	<Point X="203" Y="519"/>
+	<Point X="203" Y="522"/>
+	<Point X="203" Y="525"/>
+	<Point X="203" Y="529"/>
+</Gesture>

@@ -5,8 +5,7 @@ from constants import * # importing from constants.py
 from copy import deepcopy
 from recognizer import Recognizer
 from database import Database
-from random import shuffle
-from time import strftime
+from time import strftime, sleep
 import json
 import os
 from shutil import rmtree
@@ -72,17 +71,17 @@ class Board:
 
     def createUserIdTextBox(self):
         self.userIdTextBox = Text(self.root, width=TEXT_BOX_WITDH, height=TEXT_BOX_HEIGHT)
-        self.userIdTextBox.pack()
+        self.userIdTextBox.pack(side='top')
 
     def createClearButton(self):
         self.clearButton = Button(self.root, text=CLEAR_BUTTON_TEXT)
         self.clearButton.configure(command=self.onClearButtonClick)
-        self.clearButton.pack()
+        self.clearButton.pack(side = 'left')
 
     def createSubmitButton(self):
         self.submitButton = Button(self.root, text=SUBMIT_BUTTON_TEXT)
         self.submitButton.configure(command=self.onSubmitButtonClick)
-        self.submitButton.pack()
+        self.submitButton.pack(side = 'left')
     
     def createGestureImageLabel(self):
         self.gestureImageLabel = Label(self.root)
@@ -99,7 +98,7 @@ class Board:
     def setGestureImageLabel(self, img):
         self.gestureImageLabel.configure(image = img)
         self.gestureImageLabel.image = img
-        self.gestureImageLabel.pack()
+        self.gestureImageLabel.pack(side='right')
 
     def clearGestureImageLabel(self):
         self.gestureImageLabel.destroy()
@@ -168,6 +167,8 @@ class Board:
             self.setPromptLabel('Thank you for participating, {}!'.format(self.currentUser), 2)
             self.clearGestureImageLabel()
             self.root.update()
+            sleep(2)
+            self.setPromptLabel('', 2)
             self.createXMLUserLogs()
             self.userDrawCount = 0
             self.gestureIndex = 0
