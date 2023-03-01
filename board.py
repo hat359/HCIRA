@@ -122,7 +122,7 @@ class Board:
     # Function to set image to show the user as a reference
     def setGestureImageLabel(self, img):
         self.gestureImageLabel.configure(image = img)
-        self.gestureImageLabel.image = img
+        self.gestureImageLabel.image = img # type: ignore
         self.gestureImageLabel.pack(side='right')
 
     # Function to clear the gesture reference image when user has finished drawing
@@ -155,7 +155,7 @@ class Board:
             self.promptLabel2.configure(text=message)
 
     def loadImage(self, gestureName):
-        return PhotoImage(file = "{}\gestures\{}.gif".format(self.currentWorkingDirectory,gestureName))
+        return PhotoImage(file = "{}/gestures/{}.gif".format(self.currentWorkingDirectory,gestureName))
 
     def setMouseBindings(self):
         # Creating bindings for board (draw handles mouse down and drag events)
