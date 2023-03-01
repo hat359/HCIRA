@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Gesture User="Sheel" Gesture="right_curly_brace2" Number="2" NumPts="30" Date="01-03-2023" Time="10:29:05">
+	<Point X="511" Y="325"/>
+	<Point X="519" Y="332"/>
+	<Point X="528" Y="340"/>
+	<Point X="537" Y="350"/>
+	<Point X="545" Y="360"/>
+	<Point X="552" Y="369"/>
+	<Point X="557" Y="379"/>
+	<Point X="562" Y="387"/>
+	<Point X="565" Y="393"/>
+	<Point X="568" Y="400"/>
+	<Point X="570" Y="406"/>
+	<Point X="571" Y="411"/>
+	<Point X="571" Y="419"/>
+	<Point X="571" Y="425"/>
+	<Point X="570" Y="430"/>
+	<Point X="570" Y="436"/>
+	<Point X="568" Y="442"/>
+	<Point X="566" Y="447"/>
+	<Point X="564" Y="453"/>
+	<Point X="561" Y="458"/>
+	<Point X="559" Y="464"/>
+	<Point X="556" Y="470"/>
+	<Point X="554" Y="475"/>
+	<Point X="552" Y="480"/>
+	<Point X="550" Y="484"/>
+	<Point X="548" Y="487"/>
+	<Point X="547" Y="489"/>
+	<Point X="546" Y="492"/>
+	<Point X="545" Y="494"/>
+	<Point X="544" Y="496"/>
+</Gesture>

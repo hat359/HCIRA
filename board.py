@@ -1,6 +1,6 @@
 #Authors - Harsh Athavale & Abdul Samadh Azath
 
-from tkinter import Canvas, Button, Label, Text
+from tkinter import Canvas, Button, Label, Text, PhotoImage 
 from constants import * # importing from constants.py
 from copy import deepcopy
 from recognizer import Recognizer
@@ -11,6 +11,7 @@ import json
 import os
 from shutil import rmtree
 from xml.dom import minidom
+import os
 
 class Board:
     def __init__(self, root, mode):
@@ -25,6 +26,8 @@ class Board:
             self.startPointX = 0
             self.startPointY = 0
         elif self.mode == 'collection':
+            self.currentWorkingDirectory = os.getcwd()
+            print(self.currentWorkingDirectory)
             self.userAdded = False
             self.readyToStore = False
             self.gestureList = GESTURE_LIST
@@ -50,6 +53,7 @@ class Board:
             # 5. Add logic to show prompt and store points - Inprogress
             # 6. Add text box to get user ID and any other user data
             self.createUserIdTextBox()
+            self.createGestureImageLabel()
             # 7. Convert json(database.json) to xml
     
     # def collectFromUser(self, userId):
@@ -79,6 +83,9 @@ class Board:
         self.submitButton = Button(self.root, text=SUBMIT_BUTTON_TEXT)
         self.submitButton.configure(command=self.onSubmitButtonClick)
         self.submitButton.pack()
+    
+    def createGestureImageLabel(self):
+        self.gestureImageLabel = Label(self.root)
 
     def createPredictionLabels(self):
         self.predictedGestureLabel = Label(self.root)
@@ -88,6 +95,14 @@ class Board:
         self.predictedGestureLabel.pack()
         self.confidenceLabel.pack()
         self.timelabel.pack()
+    
+    def setGestureImageLabel(self, img):
+        self.gestureImageLabel.configure(image = img)
+        self.gestureImageLabel.image = img
+        self.gestureImageLabel.pack()
+
+    def clearGestureImageLabel(self):
+        self.gestureImageLabel.destroy()
     
     def setPredictionLabels(self, recognizedGesture, score, time):
         self.predictedGestureLabel.configure(text="Predicted Gesture = "  + str(recognizedGesture))
@@ -111,6 +126,9 @@ class Board:
             self.promptLabel1.configure(text=message)
         else:
             self.promptLabel2.configure(text=message)
+
+    def loadImage(self, gestureName):
+        return PhotoImage(file = "{}\gestures\{}.gif".format(self.currentWorkingDirectory,gestureName))
 
     def setMouseBindings(self):
         # Creating bindings for board (draw handles mouse down and drag events)
@@ -139,13 +157,16 @@ class Board:
             self.points.clear()
             self.board.delete(BOARD_DELETE_MODE)
         if self.userDrawCount < 5:
-            self.setPromptLabel('Please draw a {}'.format(self.gestureList[self.gestureIndex]), 2)
+            gestureName = self.gestureList[self.gestureIndex]
+            self.setPromptLabel('Please draw a {}'.format(gestureName), 2)
+            self.setGestureImageLabel(self.loadImage(gestureName))
             self.userDrawCount += 1
             self.gestureIndex = (self.gestureIndex + 1)%len(self.gestureList)
             self.readyToStore = True
         else:
             self.setPromptLabel('Saving your contribution!', 1)
             self.setPromptLabel('Thank you for participating, {}!'.format(self.currentUser), 2)
+            self.clearGestureImageLabel()
             self.root.update()
             self.createXMLUserLogs()
             self.userDrawCount = 0
