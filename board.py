@@ -320,7 +320,7 @@ class Board:
 
                     # Get the string representation of the XML document and write it to a file
                     gestureRootString = root.toprettyxml(indent= "\t")
-                    file_name = '{}{}.xml'.format(gesture,i+1)
+                    file_name = '{}{}.xml'.format(gesture,'0{}'.format(i+1) if i+1<10 else str(i+1))
                     file_path = os.path.join(user_path, file_name)
                     with open(file_path, "w") as file:
                         file.write(gestureRootString)
