@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Gesture User="user1" Gesture="triangle3" Number="3" NumPts="34" Date="02-03-2023" Time="13:17:06">
+	<Point X="302" Y="274"/>
+	<Point X="301" Y="279"/>
+	<Point X="297" Y="291"/>
+	<Point X="284" Y="312"/>
+	<Point X="267" Y="335"/>
+	<Point X="252" Y="355"/>
+	<Point X="240" Y="373"/>
+	<Point X="230" Y="389"/>
+	<Point X="226" Y="397"/>
+	<Point X="226" Y="400"/>
+	<Point X="226" Y="403"/>
+	<Point X="227" Y="403"/>
+	<Point X="237" Y="401"/>
+	<Point X="257" Y="398"/>
+	<Point X="289" Y="394"/>
+	<Point X="328" Y="391"/>
+	<Point X="363" Y="390"/>
+	<Point X="389" Y="390"/>
+	<Point X="404" Y="391"/>
+	<Point X="414" Y="393"/>
+	<Point X="420" Y="394"/>
+	<Point X="422" Y="394"/>
+	<Point X="423" Y="394"/>
+	<Point X="422" Y="393"/>
+	<Point X="418" Y="390"/>
+	<Point X="408" Y="380"/>
+	<Point X="391" Y="364"/>
+	<Point X="370" Y="343"/>
+	<Point X="350" Y="323"/>
+	<Point X="334" Y="305"/>
+	<Point X="322" Y="288"/>
+	<Point X="315" Y="278"/>
+	<Point X="311" Y="273"/>
+	<Point X="309" Y="270"/>
+</Gesture>

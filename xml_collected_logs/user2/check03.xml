@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Gesture User="user2" Gesture="check3" Number="3" NumPts="18" Date="02-03-2023" Time="13:17:07">
+	<Point X="344" Y="339"/>
+	<Point X="347" Y="342"/>
+	<Point X="354" Y="352"/>
+	<Point X="366" Y="370"/>
+	<Point X="375" Y="384"/>
+	<Point X="379" Y="392"/>
+	<Point X="382" Y="397"/>
+	<Point X="383" Y="400"/>
+	<Point X="383" Y="399"/>
+	<Point X="389" Y="383"/>
+	<Point X="408" Y="346"/>
+	<Point X="443" Y="290"/>
+	<Point X="481" Y="234"/>
+	<Point X="508" Y="200"/>
+	<Point X="524" Y="181"/>
+	<Point X="534" Y="171"/>
+	<Point X="538" Y="167"/>
+	<Point X="540" Y="167"/>
+</Gesture>

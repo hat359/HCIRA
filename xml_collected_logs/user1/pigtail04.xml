@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<Gesture User="user1" Gesture="pigtail4" Number="4" NumPts="32" Date="02-03-2023" Time="13:17:07">
+	<Point X="197" Y="468"/>
+	<Point X="199" Y="466"/>
+	<Point X="206" Y="456"/>
+	<Point X="225" Y="427"/>
+	<Point X="250" Y="386"/>
+	<Point X="271" Y="348"/>
+	<Point X="284" Y="318"/>
+	<Point X="292" Y="296"/>
+	<Point X="295" Y="281"/>
+	<Point X="296" Y="274"/>
+	<Point X="295" Y="269"/>
+	<Point X="293" Y="268"/>
+	<Point X="289" Y="267"/>
+	<Point X="284" Y="268"/>
+	<Point X="279" Y="271"/>
+	<Point X="274" Y="277"/>
+	<Point X="269" Y="286"/>
+	<Point X="263" Y="298"/>
+	<Point X="258" Y="311"/>
+	<Point X="255" Y="324"/>
+	<Point X="253" Y="336"/>
+	<Point X="254" Y="347"/>
+	<Point X="257" Y="359"/>
+	<Point X="266" Y="374"/>
+	<Point X="279" Y="391"/>
+	<Point X="293" Y="404"/>
+	<Point X="306" Y="417"/>
+	<Point X="317" Y="427"/>
+	<Point X="324" Y="434"/>
+	<Point X="329" Y="438"/>
+	<Point X="331" Y="440"/>
+	<Point X="332" Y="441"/>
+</Gesture>

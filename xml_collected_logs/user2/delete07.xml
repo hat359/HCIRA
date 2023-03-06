@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Gesture User="user2" Gesture="delete7" Number="7" NumPts="34" Date="02-03-2023" Time="13:17:07">
+	<Point X="396" Y="334"/>
+	<Point X="400" Y="339"/>
+	<Point X="417" Y="355"/>
+	<Point X="443" Y="380"/>
+	<Point X="470" Y="409"/>
+	<Point X="494" Y="439"/>
+	<Point X="511" Y="460"/>
+	<Point X="523" Y="475"/>
+	<Point X="529" Y="483"/>
+	<Point X="533" Y="487"/>
+	<Point X="534" Y="488"/>
+	<Point X="532" Y="487"/>
+	<Point X="525" Y="483"/>
+	<Point X="508" Y="480"/>
+	<Point X="480" Y="479"/>
+	<Point X="449" Y="480"/>
+	<Point X="423" Y="482"/>
+	<Point X="404" Y="484"/>
+	<Point X="392" Y="484"/>
+	<Point X="386" Y="485"/>
+	<Point X="383" Y="485"/>
+	<Point X="382" Y="484"/>
+	<Point X="382" Y="483"/>
+	<Point X="383" Y="483"/>
+	<Point X="386" Y="480"/>
+	<Point X="397" Y="470"/>
+	<Point X="421" Y="446"/>
+	<Point X="462" Y="408"/>
+	<Point X="501" Y="373"/>
+	<Point X="523" Y="354"/>
+	<Point X="539" Y="341"/>
+	<Point X="549" Y="333"/>
+	<Point X="553" Y="331"/>
+	<Point X="554" Y="330"/>
+</Gesture>

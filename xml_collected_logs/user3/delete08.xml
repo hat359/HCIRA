@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Gesture User="user3" Gesture="delete8" Number="8" NumPts="33" Date="02-03-2023" Time="13:17:07">
+	<Point X="590" Y="254"/>
+	<Point X="596" Y="260"/>
+	<Point X="612" Y="274"/>
+	<Point X="638" Y="301"/>
+	<Point X="666" Y="331"/>
+	<Point X="692" Y="358"/>
+	<Point X="712" Y="378"/>
+	<Point X="722" Y="388"/>
+	<Point X="727" Y="394"/>
+	<Point X="730" Y="397"/>
+	<Point X="731" Y="398"/>
+	<Point X="730" Y="397"/>
+	<Point X="727" Y="397"/>
+	<Point X="712" Y="394"/>
+	<Point X="675" Y="392"/>
+	<Point X="640" Y="391"/>
+	<Point X="618" Y="391"/>
+	<Point X="601" Y="391"/>
+	<Point X="591" Y="391"/>
+	<Point X="588" Y="392"/>
+	<Point X="587" Y="392"/>
+	<Point X="587" Y="391"/>
+	<Point X="589" Y="388"/>
+	<Point X="595" Y="376"/>
+	<Point X="610" Y="351"/>
+	<Point X="635" Y="313"/>
+	<Point X="661" Y="274"/>
+	<Point X="678" Y="252"/>
+	<Point X="690" Y="238"/>
+	<Point X="698" Y="228"/>
+	<Point X="702" Y="225"/>
+	<Point X="703" Y="225"/>
+	<Point X="703" Y="226"/>
+</Gesture>
