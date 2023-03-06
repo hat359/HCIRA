@@ -5,8 +5,8 @@ from board import Board #board.py contains all the functions.
 from offline_recognizer import OfflineRecognizer
 
 def main():
-    startOnlineRecognizer()
-    # startOfflineRecognizer()
+    # startOnlineRecognizer()
+    startOfflineRecognizer()
 
 def startOnlineRecognizer():
     root = Tk() #initializig the tkinter lib. 

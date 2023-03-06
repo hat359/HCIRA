@@ -21,12 +21,12 @@ class OfflineRecognizer(): #Offline recognizer code
     def preProcessOfflineData(self): # this preprocesses all the data points from the xml. 
         self.preProcessedData = deepcopy(self.offlineData)
         for user in self.offlineData:
-            for speed in self.offlineData[user]:
-                for gesture in self.offlineData[user][speed]:
-                    self.preProcessedData[user][speed][gesture] = []
-                    for points in self.offlineData[user][speed][gesture]:
-                        # Pre processing loaded xml data using the preprocesser function in recognizer
-                        self.preProcessedData[user][speed][gesture].append(self.recognizer.getPreProcessPoints(points))
+            # for speed in self.offlineData[user]:
+            for gesture in self.offlineData[user]:
+                self.preProcessedData[user][gesture] = []
+                for points in self.offlineData[user][gesture]:
+                    # Pre processing loaded xml data using the preprocesser function in recognizer
+                    self.preProcessedData[user][gesture].append(self.recognizer.getPreProcessPoints(points))
         # print(len(self.preProcessedData['s02']['medium']['arrow'][0]))
         # print(len(self.offlineData['s02']['medium']['arrow'][0]))
     
@@ -36,7 +36,7 @@ class OfflineRecognizer(): #Offline recognizer code
         total=0 # total iterations
         correct=0  # number of correct matches 
         iterations = 10
-        examples_start, examples_end = 1,9
+        examples_start, examples_end = 1,5
         for user in self.preProcessedData: # For each user
             
             score[user] = {}
@@ -50,7 +50,7 @@ class OfflineRecognizer(): #Offline recognizer code
                     # print(len(self.preProcessedData[user]['medium']['arrow'][0]))
                     
                     # Get training and testing set
-                    training_set, testing_set = self.getSplitData(self.preProcessedData[user]['medium'], example, user)
+                    training_set, testing_set = self.getSplitData(self.preProcessedData[user], example, user)
 
                     # print(len(training_set))
                     # print(len(testing_set))

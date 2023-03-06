@@ -95,7 +95,7 @@ class Recognizer:
         for gesture, templatePoints in self.template.items():
             distance = self.DistanceAtBestAngle(points, templatePoints, radians(-45), radians(45), radians(2))
             tempScore= 1 - distance/(0.5*sqrt(SCALE_FACTOR**2 + SCALE_FACTOR**2))
-            tempList[gesture]=tempScore
+            tempList[gesture]=round(tempScore,2)
             if distance < bestDistance:
                 bestDistance = distance
                 recognizedGesture = gesture
