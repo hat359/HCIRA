@@ -3,7 +3,7 @@
 from xml_parser import Parser
 from recognizer import Recognizer
 from copy import deepcopy
-from random import randint
+from random import randint, shuffle
 from json import dumps
 import csv
 
@@ -93,9 +93,14 @@ class OfflineRecognizer(): #Offline recognizer code
         training_set = {}
         testing_set = {}
         for gesture,points in gestures.items(): # For each gesture pick E training examples and 1 testing example
+            random_list = [i for i in range(0,10)]
+            shuffle(random_list)
+            training_examples = []
             for i in range(0,E):
+                training_examples.append(random_list[i])
+            for i in training_examples:
                 training_set["{}-{}-E{}".format(gesture,user,i+1)] = points[i]
-            testing_example = randint(E,9)
+            testing_example = random_list[E]
             testing_set["{}-{}-E{}".format(gesture,user, testing_example+1)] = points[testing_example]
         return training_set, testing_set
     
