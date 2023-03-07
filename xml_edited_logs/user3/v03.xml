@@ -1,0 +1,27 @@
+<?x0ml v0ersion="1.0" ?>
+<Gesture Subject="3" Name="v03" Number="3" NumPts="24" Date="02-03-2023" Time="13:17:07">
+	<Point X="147" Y="271" T="2"/>
+	<Point X="148" Y="277" T="3"/>
+	<Point X="153" Y="289" T="4"/>
+	<Point X="160" Y="304" T="5"/>
+	<Point X="166" Y="316" T="6"/>
+	<Point X="172" Y="328" T="7"/>
+	<Point X="178" Y="340" T="8"/>
+	<Point X="182" Y="349" T="9"/>
+	<Point X="185" Y="355" T="10"/>
+	<Point X="187" Y="360" T="11"/>
+	<Point X="188" Y="363" T="12"/>
+	<Point X="189" Y="364" T="13"/>
+	<Point X="189" Y="365" T="14"/>
+	<Point X="190" Y="365" T="15"/>
+	<Point X="190" Y="362" T="16"/>
+	<Point X="190" Y="356" T="17"/>
+	<Point X="193" Y="339" T="18"/>
+	<Point X="200" Y="316" T="19"/>
+	<Point X="212" Y="288" T="20"/>
+	<Point X="222" Y="264" T="21"/>
+	<Point X="226" Y="253" T="22"/>
+	<Point X="229" Y="245" T="23"/>
+	<Point X="230" Y="242" T="24"/>
+	<Point X="231" Y="241" T="25"/>
+</Gesture>

@@ -1,0 +1,28 @@
+<?x0ml v0ersion="1.0" ?>
+<Gesture Subject="1" Name="right_square_bracket01" Number="1" NumPts="25" Date="02-03-2023" Time="13:17:06">
+	<Point X="499" Y="168" T="2"/>
+	<Point X="508" Y="168" T="3"/>
+	<Point X="522" Y="168" T="4"/>
+	<Point X="537" Y="168" T="5"/>
+	<Point X="549" Y="168" T="6"/>
+	<Point X="556" Y="168" T="7"/>
+	<Point X="560" Y="168" T="8"/>
+	<Point X="562" Y="168" T="9"/>
+	<Point X="562" Y="170" T="10"/>
+	<Point X="562" Y="174" T="11"/>
+	<Point X="562" Y="184" T="12"/>
+	<Point X="562" Y="202" T="13"/>
+	<Point X="562" Y="230" T="14"/>
+	<Point X="563" Y="265" T="15"/>
+	<Point X="566" Y="298" T="16"/>
+	<Point X="568" Y="322" T="17"/>
+	<Point X="570" Y="341" T="18"/>
+	<Point X="572" Y="354" T="19"/>
+	<Point X="572" Y="360" T="20"/>
+	<Point X="572" Y="363" T="21"/>
+	<Point X="572" Y="365" T="22"/>
+	<Point X="571" Y="366" T="23"/>
+	<Point X="562" Y="368" T="24"/>
+	<Point X="542" Y="373" T="25"/>
+	<Point X="513" Y="379" T="26"/>
+</Gesture>

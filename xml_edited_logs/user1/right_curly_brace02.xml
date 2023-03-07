@@ -1,0 +1,38 @@
+<?x0ml v0ersion="1.0" ?>
+<Gesture Subject="1" Name="right_curly_brace02" Number="2" NumPts="35" Date="02-03-2023" Time="13:17:06">
+	<Point X="350" Y="211" T="2"/>
+	<Point X="353" Y="206" T="3"/>
+	<Point X="359" Y="200" T="4"/>
+	<Point X="365" Y="196" T="5"/>
+	<Point X="370" Y="195" T="6"/>
+	<Point X="375" Y="195" T="7"/>
+	<Point X="379" Y="198" T="8"/>
+	<Point X="382" Y="209" T="9"/>
+	<Point X="384" Y="225" T="10"/>
+	<Point X="384" Y="242" T="11"/>
+	<Point X="384" Y="257" T="12"/>
+	<Point X="384" Y="273" T="13"/>
+	<Point X="384" Y="286" T="14"/>
+	<Point X="385" Y="293" T="15"/>
+	<Point X="385" Y="299" T="16"/>
+	<Point X="388" Y="304" T="17"/>
+	<Point X="390" Y="307" T="18"/>
+	<Point X="393" Y="309" T="19"/>
+	<Point X="394" Y="309" T="20"/>
+	<Point X="396" Y="309" T="21"/>
+	<Point X="397" Y="309" T="22"/>
+	<Point X="396" Y="312" T="23"/>
+	<Point X="393" Y="318" T="24"/>
+	<Point X="389" Y="328" T="25"/>
+	<Point X="386" Y="341" T="26"/>
+	<Point X="384" Y="356" T="27"/>
+	<Point X="383" Y="375" T="28"/>
+	<Point X="383" Y="394" T="29"/>
+	<Point X="383" Y="406" T="30"/>
+	<Point X="383" Y="417" T="31"/>
+	<Point X="379" Y="427" T="32"/>
+	<Point X="370" Y="436" T="33"/>
+	<Point X="356" Y="442" T="34"/>
+	<Point X="342" Y="447" T="35"/>
+	<Point X="331" Y="451" T="36"/>
+</Gesture>

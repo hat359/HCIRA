@@ -1,0 +1,35 @@
+<?x0ml v0ersion="1.0" ?>
+<Gesture Subject="3" Name="left_square_bracket06" Number="6" NumPts="32" Date="02-03-2023" Time="13:17:07">
+	<Point X="627" Y="165" T="2"/>
+	<Point X="625" Y="165" T="3"/>
+	<Point X="622" Y="165" T="4"/>
+	<Point X="614" Y="165" T="5"/>
+	<Point X="603" Y="165" T="6"/>
+	<Point X="593" Y="165" T="7"/>
+	<Point X="584" Y="165" T="8"/>
+	<Point X="580" Y="165" T="9"/>
+	<Point X="577" Y="165" T="10"/>
+	<Point X="576" Y="165" T="11"/>
+	<Point X="577" Y="167" T="12"/>
+	<Point X="578" Y="172" T="13"/>
+	<Point X="578" Y="186" T="14"/>
+	<Point X="578" Y="211" T="15"/>
+	<Point X="576" Y="246" T="16"/>
+	<Point X="573" Y="287" T="17"/>
+	<Point X="571" Y="320" T="18"/>
+	<Point X="570" Y="339" T="19"/>
+	<Point X="570" Y="352" T="20"/>
+	<Point X="570" Y="360" T="21"/>
+	<Point X="570" Y="364" T="22"/>
+	<Point X="570" Y="366" T="23"/>
+	<Point X="570" Y="367" T="24"/>
+	<Point X="571" Y="367" T="25"/>
+	<Point X="573" Y="366" T="26"/>
+	<Point X="579" Y="364" T="27"/>
+	<Point X="589" Y="362" T="28"/>
+	<Point X="599" Y="360" T="29"/>
+	<Point X="607" Y="359" T="30"/>
+	<Point X="614" Y="359" T="31"/>
+	<Point X="618" Y="358" T="32"/>
+	<Point X="620" Y="357" T="33"/>
+</Gesture>

@@ -1,0 +1,34 @@
+<?x0ml v0ersion="1.0" ?>
+<Gesture Subject="1" Name="pigtail06" Number="6" NumPts="31" Date="02-03-2023" Time="13:17:07">
+	<Point X="310" Y="327" T="2"/>
+	<Point X="316" Y="319" T="3"/>
+	<Point X="329" Y="306" T="4"/>
+	<Point X="346" Y="288" T="5"/>
+	<Point X="360" Y="272" T="6"/>
+	<Point X="366" Y="260" T="7"/>
+	<Point X="371" Y="248" T="8"/>
+	<Point X="373" Y="239" T="9"/>
+	<Point X="372" Y="234" T="10"/>
+	<Point X="370" Y="231" T="11"/>
+	<Point X="366" Y="229" T="12"/>
+	<Point X="359" Y="228" T="13"/>
+	<Point X="352" Y="228" T="14"/>
+	<Point X="346" Y="228" T="15"/>
+	<Point X="341" Y="228" T="16"/>
+	<Point X="339" Y="229" T="17"/>
+	<Point X="336" Y="232" T="18"/>
+	<Point X="334" Y="238" T="19"/>
+	<Point X="331" Y="246" T="20"/>
+	<Point X="330" Y="256" T="21"/>
+	<Point X="329" Y="265" T="22"/>
+	<Point X="329" Y="274" T="23"/>
+	<Point X="332" Y="283" T="24"/>
+	<Point X="343" Y="294" T="25"/>
+	<Point X="360" Y="306" T="26"/>
+	<Point X="382" Y="317" T="27"/>
+	<Point X="401" Y="324" T="28"/>
+	<Point X="415" Y="329" T="29"/>
+	<Point X="426" Y="332" T="30"/>
+	<Point X="432" Y="334" T="31"/>
+	<Point X="434" Y="335" T="32"/>
+</Gesture>

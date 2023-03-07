@@ -1,0 +1,19 @@
+<?x0ml v0ersion="1.0" ?>
+<Gesture Subject="X" Name="pigtail01" Number="1" NumPts="16" Date="28-02-2023" Time="16:12:11">
+	<Point X="852" Y="149" T="2"/>
+	<Point X="857" Y="196" T="3"/>
+	<Point X="858" Y="207" T="4"/>
+	<Point X="859" Y="219" T="5"/>
+	<Point X="861" Y="232" T="6"/>
+	<Point X="862" Y="245" T="7"/>
+	<Point X="864" Y="259" T="8"/>
+	<Point X="866" Y="272" T="9"/>
+	<Point X="868" Y="286" T="10"/>
+	<Point X="870" Y="301" T="11"/>
+	<Point X="871" Y="316" T="12"/>
+	<Point X="872" Y="332" T="13"/>
+	<Point X="873" Y="349" T="14"/>
+	<Point X="874" Y="365" T="15"/>
+	<Point X="875" Y="387" T="16"/>
+	<Point X="875" Y="387" T="17"/>
+</Gesture>
