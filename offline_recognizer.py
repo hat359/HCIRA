@@ -37,10 +37,15 @@ class OfflineRecognizer(): #Offline recognizer code
         correct=0  # number of correct matches 
         iterations = 10
         examples_start, examples_end = 1,5
+        user_count = 0
+        total_examples = (examples_end - examples_start + 1)*len(self.preProcessedData)
+        example_count = 0
         for user in self.preProcessedData: # For each user
-            
+            user_count += 1
             score[user] = {}
             for example in range(examples_start,examples_end+1): # For each example from 1 to 9
+                example_count += 1
+                print('Processing Example {}/{} for {} completed {}%'.format(example, examples_end, user,int((example_count/total_examples)*100)))
                 score[user][example] = {}
                 for i in range(1,iterations+1): # For iterations from 1 to 10
 
@@ -51,7 +56,9 @@ class OfflineRecognizer(): #Offline recognizer code
                     
                     # Get training and testing set
                     training_set, testing_set = self.getSplitData(self.preProcessedData[user], example, user)
-
+                    items = list(training_set.items())
+                    shuffle(items)
+                    training_set = dict(items)
                     # print(len(training_set))
                     # print(len(testing_set))
                     recognizer = Recognizer(training_set) # loads the recognizer with training templates. 
@@ -116,6 +123,7 @@ class OfflineRecognizer(): #Offline recognizer code
             return Nbest
             
     def writeToCsv(self,dict_data,filename, totalAverageAccuracy, score, iterations, eRange): #Writes to logfile. 
+        print("Processing complete! Writing to csv.")
         csv_columns = ['User','Gesture Type','RandomIteration','#ofTrainingExamples','TotalSizeOfTrainingSet','Training Set Contents','Candidate','RecoResult','Correct or Incorrect','RecoResultScore','RecoResultBestMatch','RecoResultNBestSorted']
         csv_file=filename
         try:
